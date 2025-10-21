@@ -1,0 +1,314 @@
+:root {
+  --bg-dark: #2C2C2C;
+  --bg-light: #f7f7f7;
+  --purple: #6c63ff;
+  --dark-purole: #5850dd;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  background-color: var(--bg-light);
+  transition: ease 0.3s;
+}
+
+body.dark {
+  background-color: var(--bg-dark);
+}
+
+.home-container {
+  width: 750px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  margin-top: 40px;
+  margin-bottom: 18px;
+  font-size: 26px;
+  font-weight: 500;
+  color: var(--bg-dark);
+}
+
+.options {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 16px;
+}
+.search-field {
+  
+  flex: 1;
+  font-family: "Kanit", sans-serif;
+  border: solid 1px var(--purple);
+  border-radius: 5px;
+  padding: 8px 16px;
+  font-size: 16px;
+  caret-color: var(--purple);
+  background-color: var(--bg-light);
+  transition: all 0.3s ease;
+}
+
+.search-field::placeholder {
+  color: #c3c1e5;
+}
+
+.search-field:focus {
+  border-color: var(--purple);
+  box-shadow: 0 0 8px var(--purple);
+  outline: none;
+  color: var(--purple);
+}
+
+.night-mode-button {
+  background-color: var(--purple);
+  border: none;
+  width: 38px;
+  height: 38px;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 0 8px rgba(108, 99, 255, 0.5);
+  transition: ease 0.3s;
+}
+
+.night-mode-button:hover{
+  box-shadow: 0 0 12px rgba(108, 99, 255, 0.8);
+}
+
+.night-mode-button:active {
+  background-color: var(--dark-purole);
+  box-shadow: 0 0 16px rgba(108, 99, 255, 1);
+}
+
+.todo-list {
+  margin-top: 30px;
+  width: 520px;
+}
+
+.todo-container {
+  width: 100%;
+  cursor: pointer;
+}
+.todo-bigger-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 520px;
+  height: 50px;
+  border-bottom: 1px solid var(--purple);
+}
+
+.todo-name-false {
+  padding-left: 17px;
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--bg-dark);
+}
+
+.todo-name-true {
+  padding-left: 17px;
+  font-size: 20px;
+  font-weight: 500;
+  color: #2525257c;
+  text-decoration: line-through;
+}
+
+.todo-tools {
+  display: flex;
+}
+
+.edit-icon {
+  font-size: 18px;
+  padding-right: 5px;
+  color: #cdcdcd;
+  transition: ease 0.3s;
+}
+
+.edit-icon:hover {
+  color: var(--purple);
+}
+
+.delete-icon {
+  font-size: 18px;
+  padding-right: 4px;
+  color: #cdcdcd;
+  transition: ease 0.3s;
+}
+
+.delete-icon:hover {
+  color: #e50000;
+}
+
+.tools {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.todo-checkbox {
+  position: relative;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.todo-checkbox input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  width: 26px;
+  height: 26px;
+  border: 1px solid var(--purple);
+  border-radius: 2px;
+  display: inline-block;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+/* When checked */
+.todo-checkbox input:checked ~ .checkmark {
+  background-color: var(--purple);
+}
+
+/* Add white tick */
+.todo-checkbox input:checked ~ .checkmark::after {
+  content: "";
+  position: absolute;
+  left: 8px;
+  top: 4px;
+  width: 6px;
+  height: 12px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.add-button {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 100px;
+  background-color: var(--purple);
+  color: white;
+  cursor: pointer;
+box-shadow: 0 0 8px rgba(108, 99, 255, 0.5);
+  z-index: 1000;
+  transition: ease 0.2s;
+}
+
+.add-button:hover{
+  box-shadow: 0 0 12px rgba(108, 99, 255, 0.8);
+}
+
+.add-button:active {
+  box-shadow: 0 0 16px rgba(108, 99, 255, 1);
+}
+
+.add-icon {
+  font-size: 38px;
+  font-weight: bold;
+}
+
+/* ============ Dark Mode =================== */
+
+.title-dark {
+  margin-top: 40px;
+  margin-bottom: 18px;
+  font-size: 26px;
+  font-weight: 500;
+  color: var(--bg-light);
+  transition: ease 0.3s;
+}
+
+.search-field-dark {
+  color: var(--bg-light);
+  flex: 1;
+  border: solid 1px #5A5AFF;
+  font-family: "Kanit", sans-serif;
+  border-radius: 5px;
+  padding: 8px 16px;
+  font-size: 16px;
+  caret-color: var(--bg-light);
+  background-color: #1E1E1E;
+  transition: all 0.3s ease;
+}
+
+.search-field-dark::placeholder {
+  color: var(--bg-light);
+}
+
+.search-field-dark:focus {
+  border-color: #5A5AFF;
+  box-shadow: 0 0 8px #5A5AFF;
+  outline: none;
+  color: var(--bg-light);
+}
+
+.todo-name-true-dark {
+  text-decoration: line-through;
+  color: #f7f7f77a;
+  padding-left: 17px;
+  font-size: 20px;
+  font-weight: 500;
+  transition: ease 0.3s;
+}
+
+.todo-name-false-dark {
+  padding-left: 17px;
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--bg-light);
+  transition: ease 0.3s;
+}
+
+select {
+  background-color: #6C63FF;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  appearance: none; /* remove default arrow */
+  outline: none;
+  box-shadow: 0 0 8px rgba(108, 99, 255, 0.5);
+  transition: all 0.3s ease;
+}
+
+/* add a custom arrow */
+select {
+  background-image: url("data:image/svg+xml;charset=UTF-8,<svg fill='white' height='20' viewBox='0 0 24 24' width='20' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 16px;
+  padding-right: 35px;
+}
+
+/* hover effect */
+select:hover {
+  box-shadow: 0 0 12px rgba(108, 99, 255, 0.8);
+}
+
+/* focus effect */
+select:focus {
+  outline: none;
+  box-shadow: 0 0 16px rgba(108, 99, 255, 1);
+}
+
+/* dropdown options */
+option {
+  background-color: #fff;
+  color: #6C63FF;
+  font-weight: 500;
+}
