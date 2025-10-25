@@ -1,12 +1,9 @@
 import "../css/Home.css";
-import { RiDeleteBin6Line } from "react-icons/ri";
-import { MdOutlineEdit } from "react-icons/md";
 import { IoAdd } from "react-icons/io5";
 import nightIcon from "../assets/Night.svg";
 import { useState, useEffect } from "react";
 import { AddTodo } from "../components/AddTodo";
 import { EditTodo } from "../components/EditTodo";
-import { EmptyTodo } from "../components/EmptyTodo";
 import { HeaderTools } from "../components/HeaderTools";
 import { TodoList } from "../components/TodoList";
 
