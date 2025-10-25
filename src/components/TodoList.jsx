@@ -1,3 +1,7 @@
+import { MdOutlineEdit } from "react-icons/md";
+import { RiDeleteBin6Line } from "react-icons/ri";
+import {EmptyTodo} from "./EmptyTodo.jsx"
+
 export function TodoList({filteredTodos,darkMode,handleItemDone,setSelectedIndex,setShowEditModal,handleDeleteItem}){
     return(
         <div className="todo-list">
